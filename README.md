@@ -32,7 +32,6 @@
 - 推荐使用Python Scrapy爬虫库：[https://scrapy.org](https://scrapy.org)
 
 
-
 ### 2. 检索模块
 
 #### 要求
@@ -67,3 +66,16 @@
 - 验收时会用Python的Flake8（[https://flake8.pycqa.org/en/latest/](https://flake8.pycqa.org/en/latest/)）库检查每个小组的代码是否规范，通过检查即可获得代码风格分数，不通过则不会获得。
 
 
+  命令行flake8
+  ```sh
+  pip install flake8
+  flake8 --max-line-length 127 --ignore=F401,W503 .
+  ```
+  
+  vscode配置
+  ```
+  {
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true
+  }
+  ```
