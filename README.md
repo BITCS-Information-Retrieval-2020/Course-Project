@@ -76,6 +76,10 @@
   ```
   {
     "python.linting.enabled": true,
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=127",
+        "--ignore=F401, W503"
+    ]
   }
   ```
