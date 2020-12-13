@@ -34,16 +34,16 @@
 - Papers With Code: [https://paperswithcode.com](https://paperswithcode.com) （含PDF、代码链接等）
 - PaperWeekly：[https://www.paperweekly.site](https://www.paperweekly.site)（含介绍文字，PDF，代码链接等）
 - DBLP：[https://dblp.uni-trier.de](https://dblp.uni-trier.de)
-- Semantic Scholar：[(https://www.semanticscholar.org](https://www.semanticscholar.org)
+- Semantic Scholar：[https://www.semanticscholar.org](https://www.semanticscholar.org)
 - IEEE Xplore：[https://ieeexplore.ieee.org/Xplore/home.jsp](https://ieeexplore.ieee.org/Xplore/home.jsp)
 - 各大会议期刊的网站
 
 #### 要求
 
-- [CrossMinds](https://crossminds.ai)必选，要保证爬到的论文中有一定比例包含oral视频。视频可以是视频文件，也可以是能够嵌入网页播放url。
+- [CrossMinds](https://crossminds.ai)必选，要保证爬到的论文中有一定比例包含oral视频。
 - 除CrossMinds外再至少选择一个站点爬取，爬取的站点越多，包含的字段越多，爬到的数据越多，最终得分越高。
-- 爬取到的多模态信息，包含音视频、pdf、文本等多种格式，需要把这些多模态信息统一转化为文本也存在数据库中，以供后续模块检索使用。
 - 爬到的数据必须存储到MongoDB（[https://www.mongodb.com](https://www.mongodb.com)）中，供后续模块访问使用。字段必须定义清晰。
+- 论文标题，作者等文本字段直接存在数据库里，视频，PDF等二进制文件存在磁盘上，数据库里保存文件的路径。
 - 爬虫可以是简单地一次性把数据爬完，也可以是增量式爬取，时时更新，可以是单线程，也可以是多线程，或使用线程池。总之，爬虫的性能越强，越健壮，得分越多。
 - 最后需要提供爬到数据的统计信息。
 - 推荐使用Python Scrapy爬虫库：[https://scrapy.org](https://scrapy.org)
@@ -58,6 +58,8 @@
 - 可以自己实现搜索算法，也可以使用已有的搜索引擎工具，比如Elasticsearch（[https://www.elastic.co](https://www.elastic.co)）
 - 如果自己实现算法，功能可以不用特别强，但需要说明原理和使用方法。如果使用已有的搜索引擎工具，需要理解工具的使用方法和运行原理，尽量多地探索工具提供的功能。
 - 即可以实现全文检索，也可以实现指定字段的检索，可以指定从某一个或若干字段检索。比如从标题和摘要检索。
+- 需要把视频中的语音识别为文字，并记录每段文字在视频中的时间。如果用户检索视频内容，要能返回视频，同时定位到视频中该文字出现的位置。
+- 把论文PDF转为文本，供检索使用。
 - 不需要等爬虫模块全部爬完之后才实现检索模块，可以使用少量样例数据，实现检索功能。各模块的开发是并行推进的。
 - 可以与爬虫模块协商，共同确定MongoDB数据库中的字段名称和类型，最终实现两模块联动。
 - **模块接口要求**：最终提供给系统展示模块**一个可以用pip安装的Python包**，安装之后，在代码中import包中的函数和类，即可实现检索模块提供的所有功能。
@@ -74,8 +76,6 @@
 - 推荐使用Python Django（[https://www.djangoproject.com](https://www.djangoproject.com)）库来实现网站。
 - 不需要等检索模块全部完成之后才实现展示模块，和检索模块定义好接口即可进行开发。各模块的开发是并行推进的。
 - **模块接口要求**：检索功能通过调用**检索模块提供的Python包**完成，任务开始之前需要和检索模块商量好Python包提供的接口定义。
-
-
 
 ## 共同要求
 
