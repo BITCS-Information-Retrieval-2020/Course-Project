@@ -107,7 +107,7 @@
 - 全班78名同学，分为12个队，每队6~7个人，每个队伍选择一个模块，每个模块4个队伍
 - 通过填写腾讯文档报名(在微信群里公布链接)
 - 三个不同模块的队伍自由组合成一个大队，三个小队的队长负责模块之间接口的协商，最后大队需要提交一个各个模块组成的可以展示的系统。
-- 组队完成之后，每位同学点下方对应模块的链接，根据页面引导自动创建/加入队伍，并创建Github仓库。所有的仓库都会建在[BITCS-Information-Retrieval-2020](https://github.com/BITCS-Information-Retrieval-2020)这个Github Orginization账号下。
+- 组队完成之后，每位同学点下方对应模块的链接，根据页面引导自动创建/加入队伍，并创建Github仓库。所有的仓库都会建在[BITCS-Information-Retrieval-2020](https://github.com/BITCS-Information-Retrieval-2020)这个Github Organization账号下。
 - 爬虫模块：[https://classroom.github.com/g/4nAXa0-U](https://classroom.github.com/g/4nAXa0-U)
 - 检索模块：[https://classroom.github.com/g/9wUWvhFd](https://classroom.github.com/g/9wUWvhFd)
 - 展示模块：[https://classroom.github.com/g/LwQvXP16](https://classroom.github.com/g/LwQvXP16)
